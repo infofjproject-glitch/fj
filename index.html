@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FJ - Projeto</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="loja-header">
+  <nav class="menu-esquerda">
+    <a href="#inicio" class="ativo">Início</a>
+    <a href="#sobre-projeto">Sobre o Projeto</a>
+    <a href="#porta">Porta</a>
+    <a href="#portao">Portão</a>
+    <a href="#cortina">Cortina</a>
+  </nav>
+
+  <div class="logo-central">
+    <a href="#inicio">
+      <img src="imagens/fj.png" height="80" alt="Logo FJ">
+    </a>
+  </div>
+
+  <nav class="menu-direita">
+    <a href="#contactos">Contactos</a>
+  </nav>
+</header>
+
+<section class="carrossel" id="inicio">
+  <div class="slides fade"><img src="imagens/1.jpg" alt="Imagem 1"></div>
+  <div class="slides fade"><img src="imagens/2.jpg" alt="Imagem 2"></div>
+  <div class="slides fade"><img src="imagens/3.jpg" alt="Imagem 3"></div>
+  <a class="prev" onclick="mudarSlide(-1)">&#10094;</a>
+  <a class="next" onclick="mudarSlide(1)">&#10095;</a>
+</section>
+
+<section class="principal" id="sobre-projeto">
+  <div class="imagem-destaque">
+    <img src="imagens/0-removebg-preview.png" alt="Imagem principal do projeto">
+  </div>
+  <div class="sobre">
+    <h2>SOBRE O PROJETO FJ</h2>
+    <p>
+      O projeto <b>FJ</b> é um projeto que combina eletrónica com informática no qual foi criado para expressar as qualidades e técnicas adquiridas durante o curso e a FCT.
+      O seu objetivo é mostrar e apresentar os conhecimentos através de uma maquete integrada com uma <b>Porta, Portão de Garagem</b> e uma <b>Cortina</b> automáticas, controláveis através de um botão físico como também através de uma aplicação móvel.
+    </p>
+  </div>
+</section>
+
+<!-- Seções Porta, Portão, Cortina (mantidas idênticas) -->
+<section class="conteudo-componentes cinza-claro" id="porta">
+  <h2 class="titulo-seccao">PORTA AUTOMÁTICA - COMPONENTES</h2>
+  <div class="lista-componentes">
+    <!-- Componentes Porta -->
+    <div class="item-componente"><div class="comp-imagem"><img src="imagens/10k.png" alt="Resistor 10k"></div>
+    <div class="comp-descricao"><h4>Resistor 10KΩ</h4><p>Usado para limitar a corrente e proteger componentes sensíveis. Garante a polarização correta em circuitos de entrada.</p></div></div>
+    <div class="item-componente"><div class="comp-imagem"><img src="imagens/220.png" alt="Resistor 220"></div>
+    <div class="comp-descricao"><h4>Resistor 220Ω</h4><p>Essencial para a proteção dos LEDs e para limitar a corrente base em transístores que acionam o trinco.</p></div></div>
+    <div class="item-componente"><div class="comp-imagem"><img src="imagens/diodo.png" alt="Diodo"></div>
+    <div class="comp-descricao"><h4>Diodo (Flyback)</h4><p>Utilizado em paralelo com o trinco eletromagnético para proteger o circuito de controlo contra picos de tensão indutivos.</p></div></div>
+    <div class="item-componente"><div class="comp-imagem"><img src="imagens/fonte.png" alt="Fonte de Alimentação"></div>
+    <div class="comp-descricao"><h4>Fonte de Alimentação (12V)</h4><p>Converte a tensão da rede elétrica para a tensão de corrente contínua necessária para alimentar o circuito e o trinco (ex: 5V ou 12V).</p></div></div>
+    <div class="item-componente"><div class="comp-imagem"><img src="imagens/transistor.png" alt="Transistor"></div>
+    <div class="comp-descricao"><h4>Transistor (MOSFET)</h4><p>Funciona como um interruptor eletrónico para acionar o trinco, permitindo que o microcontrolador de baixa corrente controle o trinco de maior corrente.</p></div></div>
+    <div class="item-componente"><div class="comp-imagem"><img src="imagens/trinco.png" alt="Trinco Eletrónico"></div>
+    <div class="comp-descricao"><h4>Trinco Eletromagnético</h4><p>O atuador principal da porta. Quando energizado, liberta a tranca, permitindo a abertura/fecho automático.</p></div></div>
+  </div>
+</section>
+
+<section class="conteudo-componentes cinza-claro" id="portao">
+  <h2 class="titulo-seccao">PORTÃO AUTOMÁTICO - COMPONENTES</h2>
+  <div class="lista-componentes">
+    <!-- Componentes Portão -->
+    <div class="item-componente inverso"><div class="comp-descricao"><h4>Driver de Motor</h4><p>Driver L298N é um módulo de ponte H dupla, necessário para fornecer a alta corrente ao motor e para controlar o sentido de rotação do Portão (abrir/fechar).</p></div><div class="comp-imagem"><img src="imagens/driver.png" alt="Driver do Portão"></div></div>
+    <div class="item-componente inverso"><div class="comp-descricao"><h4>Fonte de Alimentação (12V)</h4><p>Uma fonte robusta, crucial para fornecer a potência necessária para mover o motor do portão, que geralmente exige mais energia que os outros atuadores.</p></div><div class="comp-imagem"><img src="imagens/fonte.png" alt="Fonte de Alimentação do Portão"></div></div>
+    <div class="item-componente inverso"><div class="comp-descricao"><h4>Motor (Passo ou DC)</h4><p>Motor de alta potência, responsável pelo movimento do portão. Usado em conjunto com engrenagens para o sistema de transmissão.</p></div><div class="comp-imagem"><img src="imagens/motor.png" alt="Motor do Portão"></div></div>
+</section>
+
+<section class="conteudo-componentes cinza-claro" id="cortina">
+  <h2 class="titulo-seccao">CORTINA AUTOMÁTICA - COMPONENTES</h2>
+  <div class="lista-componentes">
+    <!-- Componentes Cortina -->
+    <div class="item-componente inverso"><div class="comp-descricao"><h4>Driver de Motor</h4><p>Driver L298N é um módulo de ponte H dupla, necessário para fornecer a alta corrente ao motor e para controlar o sentido de rotação do Portão (abrir/fechar).</p></div><div class="comp-imagem"><img src="imagens/driver.png" alt="Driver do Portão"></div></div>
+    <div class="item-componente inverso"><div class="comp-descricao"><h4>Fonte de Alimentação (12V)</h4><p>Uma fonte robusta, crucial para fornecer a potência necessária para mover o motor do portão, que geralmente exige mais energia que os outros atuadores.</p></div><div class="comp-imagem"><img src="imagens/fonte.png" alt="Fonte de Alimentação do Portão"></div></div>
+    <div class="item-componente inverso"><div class="comp-descricao"><h4>Motor (Passo ou DC)</h4><p>Motor de alta potência, responsável pelo movimento do portão. Usado em conjunto com engrenagens para o sistema de transmissão.</p></div><div class="comp-imagem"><img src="imagens/motor.png" alt="Motor do Portão"></div></div>
+  </div>
+</section>
+
+<section class="contactos" id="contactos">
+  <h2>CONTACTO-NOS</h2>
+  <p>Tem alguma questão sobre o Projeto FJ? Estamos disponíveis para responder!</p>
+  <div class="info-contacto">
+    <p>📧 Email: <a href="contacto.html">infofjproject@gmail.com</a></p>
+    <p>📞 Telefone: +351 961 234 567</p>
+  </div>
+  <div class="mapa-localizacao">
+    <h3>ONDE NOS ENCONTRAR:</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4012.365681256063!2d-9.338486523408259!3d38.941816344080955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ed7d98f2fd98d%3A0x13c43b9cb55d84d6!2sEscola%20Secund%C3%A1ria%20Jos%C3%A9%20Saramago!5e1!3m2!1spt-PT!2spt!4v1763568069085!5m2!1spt-PT!2spt" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 FJ. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  let slideIndex = 1;
+  mostrarSlides(slideIndex);
+  function mudarSlide(n) { mostrarSlides(slideIndex += n); }
+  function mostrarSlides(n) {
+    let slides = document.getElementsByClassName("slides");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    slides[slideIndex - 1].style.display = "block";
+  }
+  setInterval(() => mudarSlide(1), 5000);
+
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.menu-esquerda a, .menu-direita a');
+  const headerHeight = 100;
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      if(section.id){
+        const sectionTop = section.offsetTop - headerHeight;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        if(window.scrollY >= sectionTop - 50 && window.scrollY < sectionBottom){
+          current = section.getAttribute('id');
+        }
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('ativo');
+      if(link.getAttribute('href').substring(1) === current) link.classList.add('ativo');
+    });
+  });
+</script>
+
+</body>
+</html>

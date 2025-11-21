@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+      emailjs.init("SEU_USER_ID"); // substitui com o User ID do EmailJS
+  })();
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacte-nos - FJ</title>
+<link rel="stylesheet" href="estilos.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-contacto">
+
+<header class="loja-header">
+  <nav class="menu-esquerda">
+    <a href="index.html">⬅ Voltar</a>
+  </nav>
+
+  <div class="logo-central">
+    <a href="index.html"><img src="imagens/fj.png" height="80" alt="Logo FJ"></a>
+  </div>
+
+  <nav class="menu-direita">
+    <a href="contacto.html" class="ativo">Formulário</a>
+  </nav>
+</header>
+
+<main>
+<section class="formulario-contacto">
+  <h2>ENVIE-NOS A SUA MENSAGEM</h2>
+ <form id="contact-form">
+      <div class="campos-linha">
+          <div>
+              <label for="nome">O seu Nome:</label>
+              <input type="text" id="nome" name="nome" required>
+          </div>
+          <div>
+              <label for="email">O seu Email:</label>
+              <input type="email" id="email" name="email" required>
+          </div>
+      </div>
+      <label for="assunto">Assunto:</label>
+      <input type="text" id="assunto" name="assunto" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+
+      <button type="submit">Enviar Mensagem</button>
+  </form>
+</section>
+</main>
+
+<footer>
+  <p>© 2025 FJ. Todos os direitos reservados.</p>
+</footer>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+(function() {
+   emailjs.init("k3i-pIjhM6CHgg7Z2"); // Substitui pelo teu User ID
+})();
+
+const form = document.getElementById('contact-form');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // evita recarregar a página
+
+  emailjs.sendForm('service_c87z0zc', 'template_ks44h0e', this)
+    .then(function() {
+      alert('Mensagem enviada com sucesso!');
+      form.reset(); // Limpa o formulário
+    }, function(error) {
+      alert('Erro ao enviar: ' + JSON.stringify(error));
+    });
+});
+</script>
+
+</body>
+</html>
